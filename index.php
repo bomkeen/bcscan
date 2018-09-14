@@ -31,14 +31,14 @@
                                 <div class="control">
                                     <input class="input" type="text" name="vn" placeholder="Text input">
                                 </div>
-                                
+
                             </div>
                             <center>
-                            <div class="field">
-                                <div class="control">
-                                    <button class="button is-link">Submit</button>
+                                <div class="field is-pulled-right">
+                                    <div class="control">
+                                        <button class="button is-link">Submit</button>
+                                    </div>
                                 </div>
-                            </div>
                             </center>
                         </form>
                     </div>
@@ -47,31 +47,26 @@
                     <div class="container is-fluid">
                         <div class="box has-background-info">
                             <div class="box">
-                                <div class="container">
-                                    <div class="columns">
-                                        <div class="column">
-                                            <h1> HN :: <?php echo @$rs->hn; ?> </h1> 
-                                        </div>
-                                        <div class="column">
-                                            <h1> VN :: <?php echo @$rs->vn; ?> </h1> 
-                                        </div>
-                                    </div>
-                                    <div>
-                                    </div>
 
-                                </div>
-                                <div class="container">
-                                    <div class="columns">
-                                        <div class="column">
-                                            <h1><?php
-                                                echo @$rs->pname;
-                                                ?></h1>
-                                        </div>
-                                        <div class="column">
-                                            <h1><?php echo @$rs->vstdate; ?> </h1>
-                                        </div>
+                                <div class="columns is-half">
+                                    <div class="column">
+                                        <h1> HN :: <?php echo @$rs->hn; ?> </h1> 
+                                    </div>
+                                    <div class="column is-half">
+                                        <h1> VN :: <?php echo @$rs->vn; ?> </h1> 
                                     </div>
                                 </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <h1><?php
+                                            echo @$rs->pname;
+                                            ?></h1>
+                                    </div>
+                                    <div class="column">
+                                        <h1><?php echo @$rs->vstdate; ?> </h1>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
