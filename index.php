@@ -5,7 +5,12 @@
 
         <link href="css/css/bulma.min.css" rel="stylesheet" type="text/css"/>
         <script src="css/all.js" type="text/javascript"></script>
-
+      <?php 
+                session_start();
+                $token = mb_strtoupper(md5(mb_strtoupper(strval(bin2hex(openssl_random_pseudo_bytes(32))))));
+                $_SESSION['token'] = $token;
+                session_write_close();
+      ?>
     </head>
 
     <body>
@@ -40,6 +45,11 @@
                                     <input required class="input is-info" type="password" name="pass" placeholder="HosXp Password">
                                 </div>
                             </div>
+                             
+                              
+                                    <input required class="input is-info" type="hidden" name="key" value="<?php echo $token; ?>">
+                                
+                          
                             <div class="field is-grouped is-grouped-centered">
 
                                 <div class="control">

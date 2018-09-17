@@ -1,3 +1,6 @@
+<?php 
+include 'role.php';
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -9,7 +12,6 @@
     </head>
     <body>
         <?php
-        session_start();
         include './function/sql.php';
         include_once 'nav.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vn'])) {
@@ -84,7 +86,6 @@
             <section class="section">
 
             </section>
-            
-           
+          
     </body>
 </html>
