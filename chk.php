@@ -34,7 +34,7 @@
             echo '<script>';
             echo 'sweetAlert({
     title: "ผิดพลาด",
-    text: "กรุณาตรวจสอบข้อมูล user หรือ password",
+    text: "ไม่พบรายการตามที่ท่านค้นหา",
     type: "warning"
 },
 function () {

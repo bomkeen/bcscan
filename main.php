@@ -1,14 +1,13 @@
-<?php 
+<?php
 include 'role.php';
+include './function/thaidate.php';
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>ระบบ Scan Barcode</title>
-
         <link href="css/css/bulma.min.css" rel="stylesheet" type="text/css"/>
         <script src="css/all.js" type="text/javascript"></script>
-
     </head>
     <body>
         <?php
@@ -24,7 +23,6 @@ include 'role.php';
         }
         ?>
         <br>
-
         <div class="container is-fluid">
             <div class="columns is-desktop">
                 <div class="column is-3">
@@ -32,9 +30,8 @@ include 'role.php';
                         <form action="main.php" method="post" >
                             <div class="field is-grouped">
                                 <div class="control">
-                                    <input onchange="this.form.submit()" autofocus class="input" type="text" name="vn" placeholder="Text input">
+                                    <input onchange="this.form.submit()" autofocus class="input" type="text" name="vn" placeholder="VN">
                                 </div>
-
                             </div>
                             <center>
                                 <div class="field ">
@@ -51,9 +48,9 @@ include 'role.php';
                         </form>
                     </div>
                 </div>
-                <div class="column is-9">
-                    <div class="container is-fluid">
-                       
+                <?php if (@$rs != null) { ?>
+                    <div class="column is-9">
+                        <div class="container is-fluid">
                             <div class="box">
                                 <div class="container">
                                     <div class="columns is-half">
@@ -73,19 +70,15 @@ include 'role.php';
                                                 ?></h1>
                                         </div>
                                         <div class="column">
-                                            <h1><?php echo @$rs->vstdate; ?> </h1>
+                                            <h1><?php echo thaidate(@$rs->vstdate); ?> </h1>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        
+                        </div>
                     </div>
-
-                </div>
+                <?php } ?>
             </div>
-            <section class="section">
-
-            </section>
-          
+        </div>
     </body>
 </html>
