@@ -9,6 +9,7 @@
     </head>
     <body>
         <?php
+        session_start();
         include './function/sql.php';
         include_once 'nav.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vn'])) {
@@ -26,7 +27,7 @@
             <div class="columns is-desktop">
                 <div class="column is-3">
                     <div class="box has-background-primary">
-                        <form action="index.php" method="post" >
+                        <form action="main.php" method="post" >
                             <div class="field is-grouped">
                                 <div class="control">
                                     <input onchange="this.form.submit()" autofocus class="input" type="text" name="vn" placeholder="Text input">
@@ -83,5 +84,7 @@
             <section class="section">
 
             </section>
+            
+           
     </body>
 </html>

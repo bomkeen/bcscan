@@ -43,7 +43,7 @@
                             <div class="field is-grouped is-grouped-centered">
 
                                 <div class="control">
-                                    <button class="button is-primary">Submit</button>
+                                    <button class="button is-primary">เข้าระบบ</button>
                                 </div>
                             </div>
                         </div>
