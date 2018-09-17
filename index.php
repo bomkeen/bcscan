@@ -7,74 +7,58 @@
         <script src="css/all.js" type="text/javascript"></script>
 
     </head>
+
     <body>
-        <?php
-        include './function/sql.php';
-        include_once 'nav.php';
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vn'])) {
-            $vn = $_POST["vn"];
-            if ($vn != null) {
-                $rs = getdata($vn, $conn);
-            }
-        } else {
-            $vn = null;
-        }
-        ?>
-        <br>
-
-        <div class="container is-fluid">
-            <div class="columns is-desktop">
-                <div class="column is-3">
-                    <div class="box has-background-primary">
-                        <form action="index.php" method="post">
-                            <div class="field is-grouped">
-                                <div class="control">
-                                    <input class="input" type="text" name="vn" placeholder="Text input">
-                                </div>
-
-                            </div>
-                            <center>
-                                <div class="field is-pulled-right">
-                                    <div class="control">
-                                        <button class="button is-link">Submit</button>
-                                    </div>
-                                </div>
-                            </center>
-                        </form>
+        <div class="container is-fullhd">
+            <section class="hero is-primary">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <h1 class="title">
+                            ระบบ Scan Barcode
+                        </h1>
+                        <h2 class="subtitle">
+                            โรงพยาบาลส่งเสริมสุขภาพตำบล วัดพระญาติการาม
+                        </h2>
                     </div>
                 </div>
-                <div class="column is-9">
-                    <div class="container is-fluid">
-                        <div class="box has-background-info">
-                            <div class="box">
+            </section>
+            <form action="chk.php" method="post" >
+                <section class="section">
 
-                                <div class="columns is-half">
-                                    <div class="column">
-                                        <h1> HN :: <?php echo @$rs->hn; ?> </h1> 
-                                    </div>
-                                    <div class="column is-half">
-                                        <h1> VN :: <?php echo @$rs->vn; ?> </h1> 
-                                    </div>
+                    <div class="columns ">
+                        <div class="column is-4 is-offset-4">
+                            <div class="field">
+                                <label class="label">Username</label>
+                                <div class="control">
+                                    <input required class="input is-info" name="usr" type="text" placeholder="HosXp Username">
                                 </div>
-                                <div class="columns">
-                                    <div class="column">
-                                        <h1><?php
-                                            echo @$rs->pname;
-                                            ?></h1>
-                                    </div>
-                                    <div class="column">
-                                        <h1><?php echo @$rs->vstdate; ?> </h1>
-                                    </div>
-                                </div>
+                            </div>
 
+                            <div class="field">
+                                <label class="label">Password</label>
+                                <div class="control">
+                                    <input required class="input is-info" type="password" name="pass" placeholder="HosXp Password">
+                                </div>
+                            </div>
+                            <div class="field is-grouped is-grouped-centered">
+
+                                <div class="control">
+                                    <button class="button is-primary">Submit</button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-
+                </section>
+            </form>
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>
+                        <strong>ABSoft@2016</strong> 
+                    </p>
                 </div>
-            </div>
-            <section class="section">
-
-            </section>
-    </body>
+            </footer>
+        </div>
+    </body>    
 </html>
+
